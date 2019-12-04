@@ -1,7 +1,13 @@
+
 <template>
   <div class="app-container">
-      <!--
-    <div class="address-layout">
+   <div class="total-layout">
+    <div >
+            <img :src="img_home_ground" class="banner-top1">
+            <div class="total-layout">
+             <div class="layout-name">综合管理平台</div>
+          </div>
+  <!--
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="out-border">
@@ -29,7 +35,6 @@
         </el-col>
       </el-row>
     </div>
-      -->
     <div class="total-layout">
       <el-row :gutter="20">
         <el-col :span="6">
@@ -63,7 +68,9 @@
         <!--</el-col>-->
       </el-row>
     </div>
-    <!--
+   
+     <!--
+    
     <el-card class="mine-layout">
       <div style="text-align: center">
         <img width="150px" height="150px" src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg">
@@ -71,7 +78,7 @@
       <div style="text-align: center">mall全套学习教程连载中！</div>
       <div style="text-align: center;margin-top: 5px"><span class="color-main">关注公号</span>，第一时间获取。</div>
     </el-card>
-    -->
+    
     <div class="un-handle-layout">
       <div class="layout-title">待处理事务</div>
       <div class="un-handle-content">
@@ -137,6 +144,7 @@
         </el-row>
       </div>
     </div>
+    
     <div class="overview-layout">
       <el-row :gutter="20">
         <el-col :span="12">
@@ -179,6 +187,7 @@
         </el-col>
       </el-row>
     </div>
+    
     <div class="statistics-layout">
       <div class="layout-title">订单统计</div>
       <el-row>
@@ -244,6 +253,7 @@
           </div>
         </el-col>
       </el-row>
+        -->
     </div>
   </div>
 </template>
@@ -253,6 +263,7 @@
   import img_home_order from '@/assets/images/home_order.png';
   import img_home_today_amount from '@/assets/images/home_today_amount.png';
   import img_home_yesterday_amount from '@/assets/images/home_yesterday_amount.png';
+  import img_home_ground from '@/assets/images/banner2.jpg';
   const DATA_FROM_BACKEND = {
     columns: ['date', 'orderCount','orderAmount'],
     rows: [
@@ -316,7 +327,8 @@
         dataEmpty: false,
         img_home_order,
         img_home_today_amount,
-        img_home_yesterday_amount
+        img_home_yesterday_amount,
+        img_home_ground
       }
     },
     created(){
@@ -451,8 +463,37 @@
     width: 250px;
     height: 235px;
   }
+  .banner-top1 {
+    background: url("../../assets/images/banner2.jpg") no-repeat;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:95%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-color: rgba(255,255,255,0.5);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(10);
+  }
+
+   .layout-name {
+    color: #FFFFFF;
+    left: -10px;
+    padding: 15px 20px;
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    text-align: left;
+  }
   .address-content{
     padding: 20px;
     font-size: 18px
   }
+
 </style>
